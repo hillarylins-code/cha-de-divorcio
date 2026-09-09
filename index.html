@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chá de Divórcio 🥂</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <h1>Chá de Divórcio 🥂</h1>
+  <p class="subtitulo">Casei, descasei e agora vou celebrar essa nova fase — na casa nova, do meu jeitinho.</p>
+  <div class="aviso">
+    Esse site é só uma sugestão carinhosa para quem perguntou o que poderia me dar de presente 💚
+    Ninguém é obrigado a nada — sua presença já é o melhor presente!
+  </div>
+</header>
+
+<section id="convite">
+  <div class="convite-wrap">
+    <div class="convite-card">
+      <div class="convite-emojis">🪩 ✨ 🍸</div>
+      <h2 class="script">Chá de Divórcio</h2>
+      <p class="subtitulo-convite">vem celebrar comigo</p>
+      <p class="convite-frase">Casei &amp; descasei &amp; vou comemorar minha casa nova. Bora brindar essa virada de página?</p>
+      <div class="convite-detalhes">
+        <div><strong>Quando:</strong> <span id="convite-data"></span> às <span id="convite-horario"></span></div>
+        <div><strong>Onde:</strong> <span id="convite-local"></span></div>
+      </div>
+      <p class="convite-rsvp" id="convite-rsvp" style="display:none;"></p>
+    </div>
+  </div>
+</section>
+
+<section id="itens">
+  <h2>Lista de Presentes</h2>
+  <p class="section-intro">
+    Clique em <strong>“Vou presentear com este”</strong> antes de comprar — assim garantimos que
+    cada item seja escolhido por uma única pessoa. Depois é só clicar em “Ver / Comprar” para
+    finalizar a compra na loja.
+  </p>
+  <div class="container">
+    <div class="itens-grid" id="itens-grid"></div>
+  </div>
+</section>
+
+<section id="endereco">
+  <h2>Prefere entregar direto?</h2>
+  <p class="section-intro">Se quiser enviar algo por conta própria (ou qualquer item que não esteja na lista), pode mandar para o endereço abaixo:</p>
+  <div class="endereco-card">
+    <p id="endereco-linha1"></p>
+    <p id="endereco-linha2"></p>
+    <p class="cep" id="endereco-cep"></p>
+  </div>
+</section>
+
+<footer>
+  Feito com carinho 💚 — obrigada por fazer parte dessa nova fase.
+</footer>
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <h3>Vai presentear com este item? 🎁</h3>
+    <p>Se quiser, deixe seu nome (opcional) para identificação:</p>
+    <input type="text" id="modal-nome" placeholder="Seu nome (opcional)">
+    <div class="modal-botoes">
+      <button class="btn btn-cancelar" id="modal-cancelar">Cancelar</button>
+      <button class="btn btn-reservar" id="modal-confirmar">Confirmar reserva</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
