@@ -1,54 +1,29 @@
 # Chá de Divórcio — site de presentes
 
-## O que falta para funcionar 100%
+Site no ar: https://hillarylins-code.github.io/cha-de-divorcio/
+Repositório: https://github.com/hillarylins-code/cha-de-divorcio
 
-### 1. Criar o Firebase (garante que só uma pessoa reserve cada item)
+## Status atual
 
-1. Acesse https://console.firebase.google.com e crie um projeto novo (gratuito, sem cartão).
-2. No menu lateral, vá em **Build > Firestore Database** > "Criar banco de dados" > modo **produção** > escolha uma região (ex: `southamerica-east1`).
-3. Em **Regras**, cole isto e publique (permite todo mundo ler, mas só criar reserva se o item ainda não estiver reservado — ninguém pode "desreservar" ou editar um item já reservado):
+- ✅ Firebase configurado (`js/config.js`) e regras do Firestore publicadas — reserva de item é atômica, ninguém consegue reservar o mesmo item duas vezes.
+- ✅ Convite preenchido (`js/config.js` → `CONFIG.festa`): 03 de outubro às 17h, endereço da festa.
+- ✅ Endereço para entrega direta preenchido (`js/config.js` → `CONFIG.endereco`).
+- ✅ Publicado no GitHub Pages.
+- ✅ Itens da lista (`js/data.js`) preenchidos com nome, preço e variação (quando tem).
 
-   ```
-   rules_version = '2';
-   service cloud.firestore {
-     match /databases/{database}/documents {
-       match /itens/{itemId} {
-         allow read: if true;
-         allow create: if request.resource.data.reservado == true;
-         allow update: if resource.data.reservado == false && request.resource.data.reservado == true;
-         allow delete: if false;
-       }
-     }
-   }
-   ```
+## Pendente
 
-4. Volte em **Configurações do projeto (⚙️) > Geral**, role até "Seus apps", clique no ícone `</>` (Web) para registrar um app.
-5. Copie o objeto `firebaseConfig` gerado e cole em [`js/config.js`](js/config.js), dentro de `CONFIG.firebase`.
+1. **Fotos dos itens** — nenhum item tem `imagem` ainda (todos mostram o placeholder 🎁). A dona do site vai salvar os prints/fotos de cada produto e enviar para adicionar em `js/data.js` (campo `imagem`).
+2. **Ajustes de fonte e texto** — combinado que ainda vamos revisar/alterar a tipografia (hoje: "Dancing Script" nos títulos + "Quicksand" no corpo, ver `css/style.css`) e alguns textos do site. Ainda não especificado o que muda.
+3. **RSVP** — `CONFIG.festa.rsvp` está vazio; opcional, preencher se quiser um link/texto de confirmação de presença.
 
-### 2. Preencher os itens que faltam
-
-Abra [`js/data.js`](js/data.js). Os itens da Shopee vieram como **"Item a definir"** porque a Shopee bloqueia a extração automática de nome/preço/imagem. Me envie (ou preencha você mesma) para cada um:
-- `nome`: nome curto do produto
-- `preco`: ex. `"R$ 89,90"`
-- `imagem`: link direto de uma imagem (pode ser um print hospedado, ou a imagem do produto)
-- `variacao`: se o produto tiver cor/tamanho, escreva aqui (ex: `"Cor: verde musgo"`)
-
-### 3. Preencher os dados da festa
-
-Em [`js/config.js`](js/config.js), edite `CONFIG.festa` com data, horário e (se quiser) um link de confirmação de presença.
-
-### 4. Publicar no GitHub Pages
+## Como publicar novas alterações
 
 ```bash
 cd cha-de-divorcio
-git init
 git add .
-git commit -m "primeira versão do site"
-git branch -M main
-git remote add origin https://github.com/SEU_USUARIO/cha-de-divorcio.git
-git push -u origin main
+git commit -m "descrição da mudança"
+git push
 ```
 
-Depois, no GitHub: **Settings > Pages > Source: branch `main` / pasta `/ (root)`**. Em alguns minutos o site fica no ar em `https://SEU_USUARIO.github.io/cha-de-divorcio/`.
-
-Toda vez que eu adicionar mais links, é só repetir `git add . && git commit -m "..." && git push`.
+O GitHub Pages atualiza automaticamente em alguns minutos após o push.
