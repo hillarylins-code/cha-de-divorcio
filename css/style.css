@@ -93,7 +93,7 @@ section {
   max-width: 720px;
   margin: 0 auto;
   padding: 0 20px;
-  text-align: center;
+  text-align: left;
 }
 
 section h2 {
@@ -110,20 +110,20 @@ section h2 .script {
 .bloco p {
   font-size: 1rem;
   max-width: 560px;
-  margin: 0 auto 18px;
+  margin: 0 0 18px;
 }
 
 .section-intro {
-  text-align: center;
+  text-align: left;
   max-width: 560px;
-  margin: 0 auto 36px;
+  margin: 0 0 36px;
   color: var(--vinho);
   font-size: 0.95rem;
 }
 
 .icones {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 22px;
   flex-wrap: wrap;
   font-family: 'Anton', sans-serif;
@@ -144,7 +144,7 @@ section h2 .script {
 }
 
 .duas-colunas > div {
-  text-align: center;
+  text-align: left;
 }
 
 .duas-colunas h2 {
@@ -325,26 +325,37 @@ section h2 .script {
 
 /* ENDEREÇO (seção final) */
 #endereco {
-  text-align: center;
+  text-align: left;
   padding-bottom: 64px;
 }
 
 .endereco-card {
   max-width: 520px;
-  margin: 0 auto;
+  margin: 0;
   background: var(--creme-clara);
   border-radius: 20px;
   padding: 28px 32px;
-  text-align: center;
+  text-align: left;
   border: 1px solid var(--linha);
 }
 
 .endereco-card p { margin: 4px 0; }
 
-.endereco-card .cep { color: var(--oliva-escura); font-size: 0.9rem; }
+.endereco-card .cep {
+  color: var(--vinho);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.endereco-label {
+  font-family: 'Anton', sans-serif;
+  color: var(--oliva-escura);
+  letter-spacing: 1px;
+  margin-bottom: 8px !important;
+}
 
 .obrigada {
-  margin: 24px auto 6px;
+  margin: 24px 0 6px;
   max-width: 480px;
   font-size: 0.95rem;
 }
