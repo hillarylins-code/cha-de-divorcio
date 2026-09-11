@@ -135,19 +135,5 @@ function escutarMudancas() {
   });
 }
 
-function preencherConvite() {
-  document.getElementById("convite-data-horario").textContent =
-    `${CONFIG.festa.data} às ${CONFIG.festa.horario}`;
-}
-
-function preencherEndereco() {
-  document.getElementById("endereco-linha1").textContent = CONFIG.endereco.linha1;
-  document.getElementById("endereco-linha2").textContent = CONFIG.endereco.linha2;
-  document.getElementById("endereco-bairro").textContent = CONFIG.endereco.bairro;
-  document.getElementById("endereco-cep").textContent = "CEP " + CONFIG.endereco.cep;
-}
-
 renderItens();
-preencherConvite();
-preencherEndereco();
 escutarMudancas();

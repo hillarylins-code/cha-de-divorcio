@@ -23,19 +23,6 @@ body {
   line-height: 1.55;
 }
 
-h1, h2 {
-  font-family: 'Anton', sans-serif;
-  text-transform: uppercase;
-  color: var(--oliva-escura);
-  letter-spacing: 0.5px;
-}
-
-.script {
-  font-family: 'Caveat', cursive;
-  color: var(--vinho);
-  font-weight: 700;
-}
-
 a { color: inherit; }
 
 .container {
@@ -44,48 +31,21 @@ a { color: inherit; }
   padding: 0 20px;
 }
 
-/* HERO */
-.hero {
-  background: var(--creme-clara);
-  padding: 64px 20px 40px;
-  text-align: center;
-  border-bottom: 3px solid var(--linha);
+/* CONVITE (imagem original, sem alterações) */
+.convite-imagem {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--creme);
 }
 
-.hero .eyebrow {
-  font-family: 'Anton', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-  color: var(--vinho);
-  margin: 0 0 6px;
+.convite-imagem img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-.hero h1 {
-  font-size: 3.6rem;
-  margin: 0 0 18px;
-  line-height: 1;
-}
-
-.hero-ilustracao {
-  font-size: 2rem;
-  letter-spacing: 14px;
-  margin-bottom: 18px;
-}
-
-.tag {
-  display: inline-block;
-  font-family: 'Caveat', cursive;
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: var(--vinho);
-  border: 2px solid var(--vinho);
-  border-radius: 30px;
-  padding: 4px 22px;
-  transform: rotate(-2deg);
-}
-
-/* SECTIONS */
-section {
+/* ITENS PARA COMPRA */
+#itens {
   padding: 56px 0;
 }
 
@@ -96,21 +56,13 @@ section {
   text-align: left;
 }
 
-section h2 {
+#itens h2 {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  color: var(--oliva-escura);
+  letter-spacing: 0.5px;
   font-size: 2.1rem;
   margin: 0 0 10px;
-}
-
-section h2 .script {
-  text-transform: none;
-  font-size: 1.5rem;
-  margin-left: 6px;
-}
-
-.bloco p {
-  font-size: 1rem;
-  max-width: 560px;
-  margin: 0 0 18px;
 }
 
 .section-intro {
@@ -121,77 +73,6 @@ section h2 .script {
   font-size: 0.95rem;
 }
 
-.icones {
-  display: flex;
-  justify-content: flex-start;
-  gap: 22px;
-  flex-wrap: wrap;
-  font-family: 'Anton', sans-serif;
-  font-size: 0.95rem;
-  letter-spacing: 1px;
-  margin-top: 24px;
-}
-
-/* DUAS COLUNAS */
-.duas-colunas {
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.duas-colunas > div {
-  text-align: left;
-}
-
-.duas-colunas h2 {
-  line-height: 1.15;
-}
-
-.duas-colunas .subtitulo {
-  font-family: 'Caveat', cursive;
-  font-size: 1.4rem;
-  color: var(--vinho);
-  margin: 0 0 14px;
-}
-
-.nota {
-  font-size: 0.85rem;
-  color: var(--oliva-escura);
-  font-style: italic;
-  margin-top: -8px;
-}
-
-.poster {
-  background: var(--vinho);
-  color: var(--creme);
-  border-radius: 20px;
-  padding: 36px 24px;
-}
-
-.poster p {
-  font-family: 'Anton', sans-serif;
-  text-transform: uppercase;
-  font-size: 1.6rem;
-  line-height: 1.25;
-  margin: 0;
-  max-width: none;
-}
-
-.como-funciona {
-  background: var(--creme-escura);
-  border-radius: 24px;
-  padding: 44px 32px;
-}
-
-.como-funciona .script {
-  font-size: 1.6rem;
-}
-
-/* GRID DE ITENS */
 .itens-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -323,43 +204,6 @@ section h2 .script {
   cursor: not-allowed;
 }
 
-/* ENDEREÇO (seção final) */
-#endereco {
-  text-align: left;
-  padding-bottom: 64px;
-}
-
-.endereco-card {
-  max-width: 520px;
-  margin: 0;
-  background: var(--creme-clara);
-  border-radius: 20px;
-  padding: 28px 32px;
-  text-align: left;
-  border: 1px solid var(--linha);
-}
-
-.endereco-card p { margin: 4px 0; }
-
-.endereco-card .cep {
-  color: var(--vinho);
-  font-weight: 700;
-  margin-bottom: 14px;
-}
-
-.endereco-label {
-  font-family: 'Anton', sans-serif;
-  color: var(--oliva-escura);
-  letter-spacing: 1px;
-  margin-bottom: 8px !important;
-}
-
-.obrigada {
-  margin: 24px 0 6px;
-  max-width: 480px;
-  font-size: 0.95rem;
-}
-
 /* MODAL */
 .modal-overlay {
   position: fixed;
@@ -383,7 +227,7 @@ section h2 .script {
   text-align: center;
 }
 
-.modal h3 { margin-top: 0; color: var(--oliva-escura); font-size: 1.4rem; }
+.modal h3 { margin-top: 0; color: var(--oliva-escura); font-size: 1.4rem; font-family: 'Anton', sans-serif; text-transform: uppercase; }
 
 .modal input {
   width: 100%;
@@ -403,9 +247,4 @@ section h2 .script {
 .btn-cancelar {
   background: var(--creme-escura);
   color: var(--vinho);
-}
-
-@media (max-width: 640px) {
-  .hero h1 { font-size: 2.4rem; }
-  .duas-colunas { grid-template-columns: 1fr; }
 }
