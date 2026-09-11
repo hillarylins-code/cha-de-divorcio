@@ -23,6 +23,7 @@ const CONFIG = {
   endereco: {
     linha1: "Rua Rejane Freire Correia, 1333",
     linha2: "Edifício Francisco Farias, Apartamento 102",
+    bairro: "Jardim Cidade Universitária",
     cep: "58052-197"
   }
 };

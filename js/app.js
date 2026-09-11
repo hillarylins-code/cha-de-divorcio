@@ -7,6 +7,14 @@ import {
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 
+const GIFT_SVG = `<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="18" y="42" width="46" height="40" rx="3"/>
+  <rect x="14" y="30" width="54" height="14" rx="2"/>
+  <path d="M41 30v52"/>
+  <path d="M41 30c-4-10-16-14-20-8s6 8 20 8z"/>
+  <path d="M41 30c4-10 16-14 20-8s-6 8-20 8z"/>
+</svg>`;
+
 const app = initializeApp(CONFIG.firebase);
 const db = getFirestore(app);
 
@@ -33,7 +41,7 @@ function renderItens() {
       <div class="item-imagem">${
         item.imagem
           ? `<img src="${item.imagem}" alt="${item.nome}">`
-          : "🎁"
+          : GIFT_SVG
       }</div>
       <div class="item-body">
         <span class="item-loja">${item.loja}</span>
@@ -128,19 +136,14 @@ function escutarMudancas() {
 }
 
 function preencherConvite() {
-  document.getElementById("convite-data").textContent = CONFIG.festa.data;
-  document.getElementById("convite-horario").textContent = CONFIG.festa.horario;
-  document.getElementById("convite-local").textContent = CONFIG.festa.local;
-  const rsvpEl = document.getElementById("convite-rsvp");
-  if (CONFIG.festa.rsvp) {
-    rsvpEl.textContent = CONFIG.festa.rsvp;
-    rsvpEl.style.display = "block";
-  }
+  document.getElementById("convite-data-horario").textContent =
+    `${CONFIG.festa.data} às ${CONFIG.festa.horario}`;
 }
 
 function preencherEndereco() {
   document.getElementById("endereco-linha1").textContent = CONFIG.endereco.linha1;
   document.getElementById("endereco-linha2").textContent = CONFIG.endereco.linha2;
+  document.getElementById("endereco-bairro").textContent = CONFIG.endereco.bairro;
   document.getElementById("endereco-cep").textContent = "CEP " + CONFIG.endereco.cep;
 }
 
